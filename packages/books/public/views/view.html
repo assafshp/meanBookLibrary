@@ -3,7 +3,7 @@
     <span>{{book.user.name}}</span>
     <h2>שם הספר:{{book.title}}</h2>
     <span>מספר סידורי: {{book.serial}}</span>
-    <div data-ng-if="hasAuthorization(book)">
+    <div>
         <a class="btn" href="/#!/books/{{book._id}}/edit">
             <i class="glyphicon glyphicon-edit"></i>
         </a>

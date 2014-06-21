@@ -17,6 +17,12 @@ angular.module('mean.books').factory('Books', ['$resource',
 		return $resource('books/:bookId', {
 			bookId: '@_id'
 		}, {
+		/*	get: {
+				cache: true,
+				method: 'GET'
+			},
+*/
+
 			update: {
 				method: 'PUT'
 			}
