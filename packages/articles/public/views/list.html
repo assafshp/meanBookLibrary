@@ -5,7 +5,7 @@
             <span>{{article.user.name}}</span>
             <h2>
                 <a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a>
-                <span data-ng-if="hasAuthorization(article)">
+                <span>
                     <a class="btn" href="/#!/articles/{{article._id}}/edit">
                         <i class="glyphicon glyphicon-edit"></i>
                     </a>
