@@ -19,12 +19,12 @@ Books.register(function(app, auth, database) {
     //We are adding a link to the main menu for all authenticated users
     Books.menus.add({
         'roles': ['authenticated'],
-        'title': 'Books',
+        'title': 'ספרים',
         'link': 'all books'
     });
     Books.menus.add({
         'roles': ['authenticated'],
-        'title': 'Create New Book',
+        'title': 'צור ספר חדש',
         'link': 'create book'
     });
 

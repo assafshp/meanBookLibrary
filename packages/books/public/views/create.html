@@ -1,6 +1,66 @@
 <section data-ng-controller="BooksController">
     <form name="bookForm" class="form-horizontal col-md-6" role="form" data-ng-submit="create(bookForm.$valid)" novalidate>
-        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.title.$invalid }">
+        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.name.$invalid }">
+            <label mean-token="'create-name'" class="col-md-3 control-label">שם הספר</label>
+            <div class="col-md-9">
+                <input name="name" type="text" class="form-control" data-ng-model="name" id="name" placeholder="Name" required>
+                <div ng-show="submitted && bookForm.name.$invalid" class="help-block">
+                    <p ng-show="bookForm.name.$error.required">Name is required</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.author.$invalid }">
+            <label mean-token="'create-author'" class="col-md-3 control-label">מחבר</label>
+            <div class="col-md-9">
+                <input name="author" type="text" class="form-control" data-ng-model="author" id="author" placeholder="Author" required>
+                <div ng-show="submitted && bookForm.author.$invalid" class="help-block">
+                    <p ng-show="bookForm.author.$error.required">author is required</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.publisher.$invalid }">
+            <label mean-token="'create-publisher'" class="col-md-3 control-label">הוצאה לאור</label>
+            <div class="col-md-9">
+                <input name="publisher" type="text" class="form-control" data-ng-model="publisher" id="publisher" placeholder="publisher" required>
+                <div ng-show="submitted && bookForm.publisher.$invalid" class="help-block">
+                    <p ng-show="bookForm.publisher.$error.required">publisher is required</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.mikum.$invalid }">
+            <label mean-token="'create-mikum'" class="col-md-3 control-label">מיקום</label>
+            <div class="col-md-9">
+                <input name="mikum" type="text" class="form-control" data-ng-model="mikum" id="mikum" placeholder="mikum" required>
+                <div ng-show="submitted && bookForm.mikum.$invalid" class="help-block">
+                    <p ng-show="bookForm.mikum.$error.required">mikum is required</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.type.$invalid }">
+            <label mean-token="'create-type'" class="col-md-3 control-label">סוג</label>
+            <div class="col-md-9">
+                <input name="type" type="text" class="form-control" data-ng-model="type" id="type" placeholder="type" required>
+                <div ng-show="submitted && bookForm.type.$invalid" class="help-block">
+                    <p ng-show="bookForm.type.$error.required">type is required</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.category.$invalid }">
+            <label mean-token="'create-category'" class="col-md-3 control-label">קטגוריה</label>
+            <div class="col-md-9">
+                <input name="category" category="text" class="form-control" data-ng-model="category" id="category" placeholder="category" required>
+                <div ng-show="submitted && bookForm.category.$invalid" class="help-block">
+                    <p ng-show="bookForm.category.$error.required">category is required</p>
+                </div>
+            </div>
+
+        </div>
+<!--         <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.title.$invalid }">
             <label mean-token="'create-title'" class="col-md-3 control-label">Title</label>
             <div class="col-md-9">
                 <input name="title" type="text" class="form-control" data-ng-model="title" id="title" placeholder="Title" required>
@@ -9,19 +69,35 @@
                 </div>
             </div>
 
-        </div>
-        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.content.$invalid }">
-            <label mean-token="'create-content'" for="content" class="col-md-3 control-label">Content</label>
+        </div> -->
+        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.summary.$invalid }">
+            <label mean-token="'create-summary'" for="summary" class="col-md-3 control-label">תקציר</label>
             <div class="col-md-9">
-                <textarea name="content" data-ng-model="content" id="content" cols="30" rows="10" placeholder="Content" class="form-control" required></textarea>
+                <textarea name="summary" data-ng-model="summary" id="summary" cols="30" rows="10" placeholder="summary" class="form-control" required></textarea>
+                <div ng-show="submitted && bookForm.summary.$invalid" class="help-block">
+                    <p ng-show="bookForm.summary.$error.required">Summary is required</p>
+                </div>
+            </div>
+        </div>
+ <!--        <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.content.$invalid }">
+            <label mean-token="'create-content'" for="content" class="col-md-3 control-label">תקציר</label>
+            <div class="col-md-9">
+                <textarea name="content" data-ng-model="content" id="content" cols="30" rows="10" placeholder="content" class="form-control" required></textarea>
                 <div ng-show="submitted && bookForm.content.$invalid" class="help-block">
                     <p ng-show="bookForm.content.$error.required">Content is required</p>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+
+
+
+
+
+
         <div class="form-group">
             <div class="col-md-offset-3 col-md-9">
-                <button type="submit" class="btn btn-info">Submit</button>
+                <button type="submit" class="btn btn-info">שמור</button>
             </div>
         </div>
     </form>

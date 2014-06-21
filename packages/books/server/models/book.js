@@ -28,19 +28,59 @@ var BookSchema = new Schema({
     user: {
         type: Schema.ObjectId,
         ref: 'User'
-    }
+    },
+    serial: {
+        type: Number,
+        default:'',
+        trim: true
+    },
+    name: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    category: {
+        type: String,
+        default: 'כללי',
+        trim: true
+    },
+    type: {
+        type: String,
+        default: 'ספר',
+        trim: true
+    },
+    publisher: {
+        type: String,
+        default: '',
+        trim:true
+    },
+    author: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    mikum: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    summary: {
+        type: String,
+        default: '',
+        trim: true
+    },
 });
 
 /**
  * Validations
  */
-BookSchema.path('title').validate(function(title) {
-    return !!title;
-}, 'Title cannot be blank');
+/*BookSchema.path('name').validate(function(name) {
+    return !!name;
+}, 'name cannot be blank');*/
 
-BookSchema.path('content').validate(function(content) {
+/*BookSchema.path('content').validate(function(content) {
     return !!content;
-}, 'Content cannot be blank');
+}, 'Content cannot be blank');*/
 
 /**
  * Statics

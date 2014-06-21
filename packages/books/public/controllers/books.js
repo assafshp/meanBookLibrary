@@ -24,8 +24,16 @@ angular.module('mean.books').controller('BooksController', ['$scope', '$statePar
         $scope.create = function(isValid) {
             if (isValid) {
                 var book = new Books({
-                    title: this.title,
-                    content: this.content
+                    title: this.name,
+                    content: this.name,
+                    name: this.name,
+                    serial: this.serial,
+                    author: this.author,
+                    publisher: this.publisher,
+                    mikum: this.mikum,
+                    type: this.type,
+                    category: this.category,
+                    summary: this.summary
                 });
                 book.$save(function(response) {
                     $location.path('books/' + response._id);
@@ -33,6 +41,16 @@ angular.module('mean.books').controller('BooksController', ['$scope', '$statePar
 
                 this.title = '';
                 this.content = '';
+                this.name = '';
+                this.serial = '';
+                this.author = '';
+                this.publisher = '';
+                this.mikum = '';
+                this.type = '';
+                this.category = '';
+                this.summary = '';
+
+
             } else {
                 $scope.submitted = true;
             }
@@ -47,6 +65,7 @@ angular.module('mean.books').controller('BooksController', ['$scope', '$statePar
                         $scope.books.splice(i, 1);
                     }
                 }
+                $location.path('books');
             } else {
                 $scope.book.$remove(function(response) {
                     $location.path('books');

@@ -1,5 +1,5 @@
-<section data-ng-controller="BooksController" data-ng-init="find()">
-    <ul class="books unstyled">
+<section data-ng-controller="BooksController" data-ng-init="find()" style="direction:rtl;float:right">
+ <!--    <ul class="books unstyled">
         <li data-ng-repeat="book in books">
             <span>{{book.created | date:'medium'}}</span> /
             <span>{{book.user.name}}</span>
@@ -17,5 +17,41 @@
             <div>{{book.content}}</div>
         </li>
     </ul>
-    <h1 data-ng-hide="!books || books.length">No books yet. <br> Why don't you <a href="/#!/books/create">Create One</a>?</h1>
+    <h1 data-ng-hide="!books || books.length">No books yet. <br> Why don't you <a href="/#!/books/create">Create One</a>?</h1> -->
+<h1>ספרים</h1>
+  <p class="lead">
+    <input type="text" ng-model="search" class="search-query" placeholder="חפש">
+    <br>
+    <p ng-show="search" >חיפשת: <b> {{search}} </b> ,קיבלת <b> {{filteredbooks.length}} </b></p>
+    <table >
+      <thead>
+        <tr>
+          <th>מספר סידורי</th>
+          <th>שם הספר</th>
+          <th>מחבר</th>
+          <th>הוצאה לאור</th>
+          <th>מיקום</th>
+          <th><a href="#!/books/create"><i class="icon-plus-sign"></i></a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr ng-repeat="book in books = (items | filter:search) | filter:search "> -->
+        <tr ng-repeat="book in filteredbooks = (books  | filter:search)">
+          <td><a data-ng-href="#!/books/{{book._id}}" >{{book.serial}}</a></td>
+          <td><a data-ng-href="#!/books/{{book._id}}" >{{book.name}}</a></td>
+          <td>{{book.author}}</td>
+          <td>{{book.publisher}}</td>
+          <td>{{book.mikum}}</td>
+          <td>
+            <a href="#!/books/{{book._id}}"><i class="icon-pencil"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    
+  </p>
+
+
+
 </section>

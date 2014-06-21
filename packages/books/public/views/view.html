@@ -1,7 +1,8 @@
 <section data-ng-controller="BooksController" data-ng-init="findOne()">
     <span>{{book.created | date:'medium'}}</span> /
     <span>{{book.user.name}}</span>
-    <h2>{{book.title}}</h2>
+    <h2>שם הספר:{{book.title}}</h2>
+    <span>מספר סידורי: {{book.serial}}</span>
     <div data-ng-if="hasAuthorization(book)">
         <a class="btn" href="/#!/books/{{book._id}}/edit">
             <i class="glyphicon glyphicon-edit"></i>
