@@ -1,0 +1,15 @@
+<section data-ng-controller="BooksController" data-ng-init="findOne()">
+    <span>{{book.created | date:'medium'}}</span> /
+    <span>{{book.user.name}}</span>
+    <h2>שם הספר:{{book.name}}</h2>
+    <span>מספר סידורי: {{book.serial}}</span>
+    <div>
+        <a class="btn" href="/#!/books/{{book._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn" data-ng-click="remove(book);">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+    <div>{{book.name}}</div>
+</section>
